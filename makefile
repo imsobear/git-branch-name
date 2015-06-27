@@ -11,7 +11,7 @@ test-cov:
 		--timeout $(TIMEOUT) \
 		$(TESTS)
 
-test-travis: install
+test-travis:
 	@NODE_ENV=test node_modules/.bin/istanbul cover \
 		./node_modules/.bin/_mocha \
 		--report lcovonly \
