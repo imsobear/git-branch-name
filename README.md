@@ -1,4 +1,4 @@
-# git-branch-name [![Build Status](https://travis-ci.org/imsobear/git-branch-name.svg?branch=master)](https://travis-ci.org/imsobear/git-branch-name)
+# git-branch-name [![Build Status](https://travis-ci.org/imsobear/git-branch-name.svg?branch=master)](https://travis-ci.org/imsobear/git-branch-name)[![Coverage Status] (https://coveralls.io/repos/imsobear/git-branch-name/badge.svg?branch=master)](https://coveralls.io/r/imsobear/git-branch-name?branch=master)
 
 
 Get the directory's git branchName through`.git/HEAD` file content.
