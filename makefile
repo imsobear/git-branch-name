@@ -11,4 +11,13 @@ test-cov:
 		--timeout $(TIMEOUT) \
 		$(TESTS)
 
+test-travis: install
+	@NODE_ENV=test node_modules/.bin/istanbul cover \
+		./node_modules/.bin/_mocha \
+		--report lcovonly \
+		-- \
+		--reporter dot \
+		--timeout $(TIMEOUT) \
+		$(TESTS)
+
 .PHONY: test
