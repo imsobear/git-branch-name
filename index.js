@@ -12,12 +12,7 @@ module.exports = function(dirPath, callback) {
 
   var gitHeadFilePath = path.resolve(dirPath, './.git/HEAD');
 
-  console.log(dirPath);
-  console.log(gitHeadFilePath)
-
   fs.readFile(gitHeadFilePath, 'utf-8', function(err, gitHeadFileContent) {
-
-    console.log(gitHeadFileContent)
 
     if (err) {
 
@@ -25,14 +20,19 @@ module.exports = function(dirPath, callback) {
 
     } else {
 
+      var branchName = '';
+
       try {
 
-        var branchName = gitHeadFileContent.match(/refs\/heads\/(.*)/)[1];
+        branchName = gitHeadFileContent.match(/refs\/heads\/(.*)/)[1];
         callback(null, branchName);
 
       } catch(err) {
 
-        callback(err);
+        // travis get commit log
+        console.error(err);
+        branchName = gitHeadFileContent;
+        callback(null, branchName);
 
       }
 
