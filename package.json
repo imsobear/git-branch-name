@@ -1,6 +1,6 @@
 {
-  "name": "getGitBranchName",
-  "version": "0.0.1",
+  "name": "git-branch-name",
+  "version": "1.0.0",
   "description": "get the directory's git branchName",
   "main": "index.js",
   "scripts": {

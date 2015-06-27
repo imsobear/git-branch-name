@@ -1,4 +1,4 @@
-# GitBranch
+# git-branch-name
 
 Get the directory's git branchName through`.git/HEAD` file content.
 
@@ -11,7 +11,7 @@ npm install getGitBranchName --save
 ## Use
 
 ```javascript
-var getGitBranchName = require('getGitBranchName');
+var getGitBranchName = require('git-branch-name');
 
 var dirPath = path.resolve(__dirname, '../');
 
