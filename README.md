@@ -5,7 +5,7 @@ Get the directory's git branchName through`.git/HEAD` file content.
 ## Install
 
 ```
-npm install getGitBranchName --save
+npm install git-branch-name --save
 ```
 
 ## Use
