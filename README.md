@@ -1,4 +1,5 @@
-# git-branch-name
+# git-branch-name [![Build Status](https://travis-ci.org/imsobear/git-branch-name.svg?branch=master)](https://travis-ci.org/imsobear/git-branch-name)
+
 
 Get the directory's git branchName through`.git/HEAD` file content.
 

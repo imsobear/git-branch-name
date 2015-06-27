@@ -12,7 +12,12 @@ module.exports = function(dirPath, callback) {
 
   var gitHeadFilePath = path.resolve(dirPath, './.git/HEAD');
 
+  console.log(dirPath);
+  console.log(gitHeadFilePath)
+
   fs.readFile(gitHeadFilePath, 'utf-8', function(err, gitHeadFileContent) {
+
+    console.log(gitHeadFileContent)
 
     if (err) {
 
