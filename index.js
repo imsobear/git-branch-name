@@ -27,7 +27,7 @@ module.exports = function(dirPath, callback) {
 
     try {
 
-      var branchName = stdout.match(/\*\s(.*)\n/)[1];
+      var branchName = stdout === ''? '': stdout.match(/\*\s(.*)\n/)[1];
       callback(null, branchName);
 
     } catch(err) {

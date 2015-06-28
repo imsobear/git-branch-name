@@ -22,8 +22,6 @@ getGitBranchName(dirPath, function(err, branchName) {
 });
 ```
 
-[Example](./example/)
-
 ## How
 
 Parse the output of `git branch --work-tree=dirPath --git-dit=dirPath/.git`
