@@ -1,5 +1,10 @@
+'use strict';
 
-var fs = require('fs');
+/**
+ * get the directory's git branch
+ */
+
+var execFile = require('child_process').execFile;
 var path = require('path');
 
 /**
@@ -10,31 +15,25 @@ var path = require('path');
  */
 module.exports = function(dirPath, callback) {
 
-  var gitHeadFilePath = path.resolve(dirPath, './.git/HEAD');
+  // .git
+  var gitPath = path.resolve(dirPath, './.git');
 
-  fs.readFile(gitHeadFilePath, 'utf-8', function(err, gitHeadFileContent) {
+  // parse `git branch` output
+  execFile('git', ['--work-tree=' + dirPath, '--git-dir=' + gitPath, 'branch'], function(err, stdout, stderr) {
 
     if (err) {
+      return callback(err);
+    }
 
-      callback(err);
+    try {
 
-    } else {
+      var branchName = stdout.match(/\*\s(.*)\n/)[1];
+      callback(null, branchName);
 
-      var branchName = '';
+    } catch(err) {
 
-      try {
-
-        branchName = gitHeadFileContent.match(/refs\/heads\/(.*)/)[1];
-        callback(null, branchName);
-
-      } catch(err) {
-
-        // travis get commit log
-        console.error(err);
-        branchName = gitHeadFileContent;
-        callback(null, branchName);
-
-      }
+      callback(new Error('Parse the git branch stdout error'));
+      console.error('output: %s', stdout);
 
     }
 

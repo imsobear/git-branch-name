@@ -1,7 +1,6 @@
-# git-branch-name [![Build Status](https://travis-ci.org/imsobear/git-branch-name.svg?branch=master)](https://travis-ci.org/imsobear/git-branch-name)[![Coverage Status] (https://coveralls.io/repos/imsobear/git-branch-name/badge.svg?branch=master)](https://coveralls.io/r/imsobear/git-branch-name?branch=master)
+# git-branch-name [![Build Status](https://travis-ci.org/imsobear/git-branch-name.svg?branch=master)](https://travis-ci.org/imsobear/git-branch-name) [![Coverage Status](https://coveralls.io/repos/imsobear/git-branch-name/badge.svg?branch=master)](https://coveralls.io/r/imsobear/git-branch-name?branch=master)
 
-
-Get the directory's git branchName through`.git/HEAD` file content.
+> Get the directory's git branchName by nodejs.
 
 ## Install
 
@@ -22,6 +21,10 @@ getGitBranchName(dirPath, function(err, branchName) {
 
 });
 ```
+
+## How
+
+Parse the output of `git branch --work-tree=dirPath --git-dit=dirPath/.git`
 
 ## License
 
